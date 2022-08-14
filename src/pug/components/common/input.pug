@@ -1,0 +1,9 @@
+mixin input(label, hasSpacing)
+    if hasSpacing
+        div
+            label=label
+            input&attributes(attributes)
+    else
+        div
+            label=label
+            input&attributes(attributes)

@@ -1,0 +1,31 @@
+extends ./../components/page
+include ./../components/structure/main
+include ./../components/structure/group
+include ./../components/sectional/hero
+include ./../components/sectional/card
+include ./../components/sectional/form
+include ./../components/sectional/socials
+include ./../components/common/input
+include ./../components/common/textarea
+include ./../components/common/button
+
+
+block title
+    title Home | MatthewRDangle
+block main
+    +hero
+    section#work
+        h2 My Work
+        div.cardFlex
+            +card(
+                {src: 'lib/image/works/uConnect.jpg', alt: 'uConnect App with a login screen and homepage that displays college students having fun and laughing.'},
+                'uConnect App',
+                'An app for Harrisburg University Students to connect, socialize and explore.',
+                'https://www.behance.net/gallery/89077167/uConnect-UXUI'
+            )
+            +card(
+                {src: 'lib/image/works/development_club.jpg', alt: 'Development Club'},
+                'Development Club Logo',
+                'Development Club Logo and visual branding for Harrisburg University Development Club.',
+                'https://www.behance.net/gallery/46832329/Development-Club-Logo'
+            )

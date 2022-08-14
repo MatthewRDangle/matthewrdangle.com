@@ -1,0 +1,10 @@
+include ./../common/button
+
+mixin card(imageObj, title, desc, href)
+    div&attributes(attributes).card
+        div.card_img.placeholder
+            img(src=imageObj.src alt=imageObj.alt)
+        h3.card_header=title
+        p.card_desc=desc
+        div.card_button
+            +button('Review Work', true)(href=href target="_blank" rel="noopener")

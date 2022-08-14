@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "build": "npm run clean & concurrently \"npm:build:*\"",
+    "build:pug": "pug src/pug/views -o output -P",
+    "build:lib": "shx cp -r src/lib output/lib",
+    "clean": "concurrently \"npm:clean:*\"",
+    "clean:output": "shx rm -r output/*",
+    "compile": "npm run clean & concurrently \"npm:compile\" \"npm:build:lib\"",
+    "compile:pug": "pug -c src/pug/views -o output -P",
+    "dev": "npm run clean & npm run watch",
+    "watch": "concurrently \"npm:watch:*\"",
+    "watch:pug": "pug -w src/pug/views -o output -P",
+    "watch:lib": "nodemon -e css,jpg,png,ttf,woff,woff2,js --watch src/lib --exec \"shx rm -r output/lib & npm run build:lib\""
+  },
+  "dependencies": {
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.19",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "shx": "^0.3.4"
+  }
+}

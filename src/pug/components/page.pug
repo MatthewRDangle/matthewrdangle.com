@@ -1,0 +1,40 @@
+include ./structure/nav
+include ./structure/main
+include ./structure/footer
+
+
+- var brandName = 'Matthew R. Dangle'
+- var brandImg = {src: './lib/image/brand/logo.jpg', alt: 'White individual with blackish/brownish hair and hazel eyes.'}
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        block title
+            title Page | Matthew R. Dangle
+        link(rel='stylesheet' href='lib/css/fontawesome.css')
+        link(rel='stylesheet' href='lib/css/foundation.css')
+        script(src="lib/js/utility.js" defer)
+    body
+        header.siteHeader
+            block header
+                div.flex.padding-h-30px.flex-align-center
+                    div.flex-w-400.align-center-mobileOnly
+                        div.brand
+                            img.brand_logo.hide-onMobile(src=brandImg.src alt=brandImg.alt)
+                            span.brand_wordmark=brandName
+                    div.flex-w-full
+                        +nav
+        +main.wrapper
+            block main
+                p No content can be found for this page.
+        footer.siteFooter
+            block footer
+                div.flex.padding-h-30px.flex-align-center
+                    div.flex-w-400.text-right-notMobile
+                        div.brand.brand-bottomSpacing-mobileOnly
+                            img.brand_logo(src=brandImg.src alt=brandImg.alt)
+                            span.brand_wordmark=brandName
+                    div.flex-w-full.text-right-notMobile.text-center
+                        +socials

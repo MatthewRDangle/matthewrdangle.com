@@ -1,0 +1,5 @@
+mixin button(label, isLink)
+    if isLink
+        a.button&attributes(attributes)=label
+    else
+        button.button&attributes(attributes)=label
